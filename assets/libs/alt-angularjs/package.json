@@ -1,0 +1,30 @@
+{
+  "name": "alt-angularjs",
+  "version": "3.1.7",
+  "description": "AltJS using Angular",
+  "main": "dist/alt.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/niwasmala/alt-angularjs.git"
+  },
+  "keywords": [
+    "Alt",
+    "Angular",
+    "Javascript",
+    "Client",
+    "Framework"
+  ],
+  "author": "Nicky Irawan <niwasmala@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niwasmala/alt-angularjs/issues"
+  },
+  "homepage": "https://github.com/niwasmala/alt-angularjs",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.2.0"
+  }
+}
