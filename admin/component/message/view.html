@@ -1,0 +1,19 @@
+<div class="modal {{active?'active':''}}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="mb-3">
+                    <h4 class="modal-title {{data.css}}">{{data.title}}</h4>    
+                </div>
+                <!-- <div class="w-100 " style="height:1rem"></div> -->
+                <div class="mb-3 text-center {{data.css}}">
+                    <span class="fa " ng-class="data.icon"></span><span class="padding-left-10">{{data.text}}</span>
+                </div>
+                <!-- <div class="w-100 " style="height:1rem"></div> -->
+                <div class="mb-3 text-end">
+                    <button type="button" class="btn btn-secondary" ng-click="close()">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

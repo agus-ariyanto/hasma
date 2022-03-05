@@ -1,0 +1,35 @@
+<div class="navtop shadowed" ng-show="active">    
+    <div class="row">
+        <div class="col">
+            <span class="fa fa-bars nav-icon nav-items-icon" ng-click="leftactive=true"></span>
+            <img class="nav-brand-icon" src="assets/img/mmcs.png" alt="{{alt.title}}">
+        </div>
+        <div class="col mt-1 text-muted text-end">
+            <span class="fa fa-{{index.icon}}"></span>
+            <span class="padding-left-10">{{index.title}}</span>
+        </div>
+    </div>
+</div>
+<div class="navleft text-white {{leftactive?'active':''}}">
+    <div class="navtop absolute text-dark">
+        <div class="row">
+            <div class="col">
+                <span class="fa fa-bars  nav-icon nav-items-icon" ng-click="leftactive=false"></span>
+                <img class="nav-brand-icon" src="assets/img/mmcs.png" alt="{{alt.title}}">
+            </div>
+        </div>
+    </div>
+    <div class="nav-separator"></div>
+    <span class="nav-items" ng-repeat="i in items" ng-click="to(i.url)">
+        <span class="fa fa-{{i.icon}} nav-items-icon"></span> <span class="nav-items-text">{{i.title}}</span>
+    </span>
+    <div class="nav-separator"></div>
+    <span class="nav-items">
+        <span class="fa fa-user-edit nav-items-icon"></span> <span class="nav-items-text">Profile</span>
+    </span>
+    <span class="nav-items" ng-click="logout()">
+        <span class="fa fa-power-off nav-items-icon"></span> <span class="nav-items-text">Logout</span>
+    </span>
+</div>
+<div class="navleft-click" ng-mousemove="leftactive=false" ng-click="leftactive=false" ng-show="leftactive"></div>
+<div class="nav-separator" ng-show="active" style="height:5rem"></div>

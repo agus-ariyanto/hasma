@@ -18,7 +18,7 @@ class Base{
     function __destruct(){
         if($this->_status>299) $this->_render=false;
         foreach($this->tpl as $value) 
-        include ROOT_DIR.DS.'html'.DS.$value;
+            include ROOT_DIR.DS.'html'.DS.$value;
         http_response_code($this->_status);
     }
 

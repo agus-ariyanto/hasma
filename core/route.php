@@ -128,7 +128,7 @@ $mtd=$s;
 
 $query=$get_u;
 
-if(!empty($api)){
+if(defined(isApi)){
     if(!in_array(strtolower($ctrl),$noauth)){
         $login=new Login;
         $authlogin=$login->check();

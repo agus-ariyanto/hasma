@@ -15,8 +15,11 @@
 $prefix='hm';
 $jwt=array(
     'alg'=>'HS256',
-    'key'=>'msys.1',
+    'key'=>'hasma-0.1',
 );
+$noauth=array('image','login','render');
+
+
 /* dev_mode -> develop mode
  * beri nilai selain satu untuk production
  */

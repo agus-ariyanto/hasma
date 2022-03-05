@@ -1,0 +1,30 @@
+<style media="screen">
+
+</style>
+<div class="row" style="padding-bottom:20px;">
+    <div class="col-1">
+        <span class="fa fa-arrow-left span-rounded" ng-click="to(-1)"></span>
+    </div>
+    <div class="col-10 text-center">
+        <span class="pointer span-reset" ng-click="reset()">
+            <strong>{{data.month_name}} {{data.year}}</strong>
+        </span>
+    </div>
+    <div class="col-1 text-right">
+        <span class="fa fa-arrow-right span-rounded" ng-click="to(+1)"></span>
+    </div>
+</div>
+<div ng-show="searching">
+    <div class="nav-separator"></div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="ketik kata kunci" ng-model="search_text">
+                <button class="btn btn-primary" type="button" ng-click="search()">
+                    <span class="fa fa-search"></span>
+                </button>
+            </div>
+        </div>
+    </div>   
+    <div class="nav-separator"></div>
+</div>

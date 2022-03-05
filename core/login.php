@@ -5,13 +5,11 @@ class Login extends Base{
         parent::__construct();
         $this->params=new Params;
         $this->addModel('auth');
-        $this->addModel('verif');
     }
 
     function index(){
         $this->auth->andWhere('email',$this->params->key('email'));
         $this->auth->andWhere('pwd',sha1($this->params->key('password')));
-        $this->auth->andWhere('grup_id','0','>');
         $res=$this->auth->select();
         // login failed 
         if(empty(count($res))){
@@ -30,7 +28,6 @@ class Login extends Base{
             'userdata'=>array(
                 'id'=>$res[0]['id'],
                 'grup_id'=>$res[0]['grup_id'],
-                'profile_id'=>$res[0]['profile_id'],
             ),
             'token'=>$token,
         ));
@@ -63,7 +60,6 @@ class Login extends Base{
         global $jwt;
         $d=array(
             'id'=>$data['id'],
-            'profile_id'=>$data['profile_id'],
             'grup_id'=>$data['grup_id'],
         );
         $token=JWT::encode($d,$jwt['key'],$jwt['alg']);
