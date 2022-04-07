@@ -11,63 +11,24 @@ var navlevel = function(){
     alt.modules.navlevel = angular.module('alt-navlevel', [])
         .factory('$navlevel', ['$rootScope','$auth','$message',  function($rootScope,$auth,$message) {
             return {
-                open: function(){
-                    $rootScope.$navlevel.active=true;
-                },
                 close: function(){
                     $rootScope.$navlevel.active=false;
                     $rootScope.$navlevel.leftactive=false;
                 },
-                isadmin:function(idx){
-                    if($auth.userdata.grup_id>1) return $auth.logout(true);
-                    $rootScope.$navlevel.items=[
-                        {icon:'home',title:'Home',url:'a'},
-                    ];
-                    idx=idx||0;
-                    $rootScope.$navlevel.index=$rootScope.$navlevel.items[idx];
-                    this.open();
-                },
-                isowner:function(idx){
+                open:function(idx){
                     if($auth.userdata.grup_id>2){
                         $message.info('Anda harus login sebagai pemilik');
                         return $auth.logout(true);
                     }
                     $rootScope.$navlevel.items=[
-                        {icon:'home',title:'Home',url:'o'},
-                        {icon:'people-arrows',title:'Mekanik',url:'o/mec'},
-                        {icon:'cogs',title:'Sparepart',url:'o/spt'},
-                        {icon:'user-tie',title:'Customer',url:'o/cust'},
-                        {icon:'warehouse',title:'Bengkel',url:'o/wks'},
-                        {icon:'tasks',title:'Pool',url:'o/pool'},
-                        {icon:'truck',title:'Kendaraan',url:'o/vhc'}
+                        {icon:'home',title:'Home',url:'home'},
+                        {icon:'server',title:'Navbar',url:'navbar'},
+                        {icon:'th-large',title:'Content',url:'content'},
+                        {icon:'commenting',title:'Comment',url:'comment'}
                     ];
                     idx=idx||0;
                     $rootScope.$navlevel.index=$rootScope.$navlevel.items[idx];
-                    this.open();
-                },
-                ismechanic:function(idx){
-                    if($auth.userdata.grup_id>3){
-                        $message.info('Anda harus login sebagai mekanik');
-                        return $auth.logout(true);
-                    }
-                    $rootScope.$navlevel.items=[
-                        {icon:'home',title:'Home',url:'m'},
-                    ];
-                    idx=idx||0;
-                    $rootScope.$navlevel.index=$rootScope.$navlevel.items[idx];
-                    this.open();
-                },
-                iscustomer:function(idx){
-                    if($auth.userdata.grup_id>3){
-                        $message.info('Anda harus login sebagai partner');
-                        return $auth.logout(true);
-                    }
-                    $rootScope.$navlevel.items=[
-                        {icon:'home',title:'Home',url:'c'},
-                    ];
-                    idx=idx||0;
-                    $rootScope.$navlevel.index=$rootScope.$navlevel.items[idx];
-                    this.open();
+                    $rootScope.$navlevel.active=true;
                 }
             };
         }])

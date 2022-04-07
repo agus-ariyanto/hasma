@@ -1,0 +1,20 @@
+<div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr ng-repeat="i in navbar">
+                <td>
+                    <span class="fa {{i.icon}}"></span>
+                </td>
+                <td>{{i.title}}</td>
+                <td class="text-end">
+                    <button class="btn btn-outline-secondary btn-sm">
+                        <span class="fa fa-edit"></span>
+                    </button>
+                    <button class="btn btn-danger btn-sm">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>  
+</div>

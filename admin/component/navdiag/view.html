@@ -1,0 +1,39 @@
+<style>
+    .span-btn{
+        display: block;
+        width:64px;
+        font-size: 64px;
+        border-radius: 4px;
+        border:1px solid #b1b1b1;
+        cursor: pointer;
+    }
+    .span-btn:hover{
+        background-color: #b1b1b1;
+        border-color: #909090;
+    }
+</style>
+<div class="modal {{active?'active':''}}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="mb-3">
+                    <h4 class="modal-title">Navbar</h4>    
+                </div>
+                <div class="mb-3 text-center">
+                    <label>Icon</label>
+                    <span class="span-btn">
+                        <span class="fa {{data.icon}}"></span>
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label>Title</label>
+                    <input type="text" class="form-control" ng-model="data.title">
+                </div>
+                <div class="mb-3 text-end">
+                    <button type="button" class="btn btn-secondary" ng-click="close()">Cancel</button>
+                    <button type="button" class="btn btn-success" ng-click="save()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

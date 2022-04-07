@@ -3,15 +3,12 @@ alt.modules.auth = angular.module('alt-auth', [])
         // mengambil data token yang disimpan di lokal
         store.set(alt.application + '_token', store.get(alt.application + '_token') || '0');
         store.set(alt.application + '_user', store.get(alt.application + '_user') || {});
-        store.set(alt.application + '_location', store.get(alt.application + '_location') || {});
 
         // nilai default token 0 bila belum login
 
         return {
             token: '0',
             userdata:{},
-            location:{},
-            autologin:false,
             setToken: function(token){
                 this.token = token;
                 store.set(alt.application + '_token', this.token);
@@ -19,10 +16,6 @@ alt.modules.auth = angular.module('alt-auth', [])
             setUserData: function(data){
                 this.userdata = data;
                 store.set(alt.application + '_user', this.userdata);
-            },
-            setLocation: function(data){
-                this.location = data;
-                store.set(alt.application + '_location', this.location);
             },
             login: function(data){
                 this.setToken(data);
@@ -57,7 +50,6 @@ alt.modules.auth = angular.module('alt-auth', [])
         if(token) {
             $auth.login(token);
             $auth.setUserData(store.get(alt.application + '_user'));
-            $auth.setLocation(store.get(alt.application + '_location'));
         }
     }]);
 

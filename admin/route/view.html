@@ -5,9 +5,42 @@
         </div>
         
         <div class="col text-end">
-            <button class="btn btn-outline-secondary" ng-click="totab(1)">
-                <span class="fa fa-edit"></span> <span class="padding-left-10">Daftar</span>
-            </button>
+           
         </div>
     </div>
 </div>
+
+<div class="nav-separator"></div>
+
+<!-- <div class="modal active"> -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="w-100 " style="height:3rem"></div>
+                <div class="mb-3 text-center">
+                    <span class="text-success display-1">
+                        <span class="fa fa-user-circle"></span>
+                    </span>    
+                </div>
+                <div class="w-100 " style="height:1rem"></div>
+                <div class="input-group mb-3">
+                    <button type="button" class="btn btn-outline-success">
+                        <span class="fa fa-envelope"></span>
+                    </button>
+                        <input type="text" class="form-control" placeholder="email" ng-model="data.email">
+                </div>
+                
+                <div class="input-group mb-3" ng-init="show_pwd=true">
+                    <button type="button" class="btn btn-outline-success" ng-click="show_pwd=!show_pwd">
+                        <span class="fa fa-{{show_pwd?'eye-slash':'eye'}}"></span>
+                    </button>
+                        <input type="{{show_pwd?'text':'password'}}" class="form-control" placeholder="Password" ng-model="data.password">
+                </div>
+                <div class="w-100 " style="height:1rem"></div>
+                <div class="d-grid mb-3">
+                    <button type="button" class="btn btn-success" ng-click="login()">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->

@@ -1,11 +1,9 @@
-alt.application = 'MMCS';
-alt.title = 'MMCS :: MAINTENANCE MANAGEMENT AND CONTROLLING SYSTEM';
-alt.description = 'Application for manage and controll automobile workshop';
+alt.application = 'Hasma';
+alt.title = 'Hasma Editor';
+alt.description = 'Editor Hasma Content';
 alt.version = '0.1.1';
 alt.environment = 'development';
-
 alt.serverUrl = '../';
-
 var d=Date.today().toString('yyyy.MM.dd');
 alt.urlArgs = '_v=' + alt.version+'&t='+d;
 alt.routeFolder = '../admin/route';

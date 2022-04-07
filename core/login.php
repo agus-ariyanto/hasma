@@ -1,6 +1,6 @@
 <?php
 
-class Login extends Base{
+class Login extends Api{
     function __construct(){
         parent::__construct();
         $this->params=new Params;
@@ -16,7 +16,6 @@ class Login extends Base{
             $this->data(array(
                 'success'=>false,
                 'message'=>'Email or Password doesn\'t match',
-                'qry'=>$qry,
             ));
             return ;
         }
