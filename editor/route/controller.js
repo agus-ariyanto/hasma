@@ -17,6 +17,7 @@ define(['system/api'], function(){ return ['$scope','$navlevel','$auth','Api',
     $scope.init=function(){
         if($auth.islogin()) window.location=alt.baseUrl+'home';
     }
+    $scope.init();
     /* end controller */
     }]
 });
